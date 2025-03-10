@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RetailerSeeder::class,
             ScrapedDataSeeder::class,
+            ProductsSeeder::class,
         ]);
     }
 }

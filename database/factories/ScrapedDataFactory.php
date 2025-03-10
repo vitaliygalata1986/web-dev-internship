@@ -23,7 +23,6 @@ class ScrapedDataFactory extends Factory
             'images' => json_encode([$this->faker->imageUrl()]),
             'rating' => $this->faker->randomFloat(1, 1, 5),
             'avg_rating' => $this->faker->randomFloat(1, 1, 5),
-            'created_at' => now()->subDays(rand(0, 365)),
         ];
     }
 }

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->text('images')->nullable();
             $table->decimal('rating', 2, 1)->nullable();
             $table->decimal('avg_rating', 2, 1)->nullable();
+            $table->timestamp('created_at')->nullable();
         });
     }
 
