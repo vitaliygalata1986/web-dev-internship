@@ -9,7 +9,8 @@ class ScrapedData extends Model
 {
     use HasFactory;
 
-    public $timestamps = false;
+    protected $table = 'scraped_data';
+
     protected $fillable = [
         'product_id',
         'retailer_id',
@@ -21,5 +22,19 @@ class ScrapedData extends Model
         'rating',
         'avg_rating',
     ];
+
+    protected $casts = [
+        'images' => 'array',
+    ];
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
+    public function retailer()
+    {
+        return $this->belongsTo(Retailer::class);
+    }
 }
 

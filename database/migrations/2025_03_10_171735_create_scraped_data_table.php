@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 return new class extends Migration
 {
@@ -16,11 +17,14 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->decimal('price', 10, 2);
             $table->integer('stock_count');
-            $table->json('images')->nullable(); // JSON для списку зображень
-            $table->decimal('rating', 2, 1)->nullable()->check('rating >= 1 AND rating <= 5');
-            $table->decimal('avg_rating', 2, 1)->nullable()->check('avg_rating >= 1 AND avg_rating <= 5');
-            $table->timestamps(); // Додаємо created_at і updated_at
+            $table->json('images')->nullable();
+            $table->float('rating')->nullable();
+            $table->float('avg_rating')->nullable();
+            $table->timestamps();
         });
+
+        DB::statement("ALTER TABLE scraped_data ADD CONSTRAINT chk_rating CHECK (rating >= 1 AND rating <= 5)");
+        DB::statement("ALTER TABLE scraped_data ADD CONSTRAINT chk_avg_rating CHECK (avg_rating >= 1 AND avg_rating <= 5)");
     }
 
     public function down()

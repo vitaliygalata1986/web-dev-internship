@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
@@ -14,8 +13,8 @@ return new class extends Migration
             $table->text('description');
             $table->string('manufacturer_part_number', 255)->unique();
             $table->string('pack_size', 50);
-            $table->json('images')->nullable(); // JSON для списку зображень
-            $table->timestamps(); // Додаємо created_at і updated_at
+            $table->json('images')->nullable();
+            $table->timestamps();
         });
     }
 

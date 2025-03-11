@@ -18,10 +18,8 @@ class Retailer extends Model
         'logo',
     ];
 
-    public function products()
+    public function scrapedData()
     {
-        return $this->belongsToMany(Product::class);
+        return $this->hasMany(ScrapedData::class);
     }
-
-    public $timestamps = false;
 }

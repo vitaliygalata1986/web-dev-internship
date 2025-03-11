@@ -16,18 +16,16 @@ class Product extends Model
         'description',
         'manufacturer_part_number',
         'pack_size',
-        'images'
+        'images',
     ];
-
-    public function retailers()
-    {
-        return $this->belongsToMany(Retailer::class);
-    }
-
-    public $timestamps = false;
 
     protected $casts = [
         'images' => 'array',
     ];
+
+    public function scrapedData()
+    {
+        return $this->hasMany(ScrapedData::class);
+    }
 }
 
