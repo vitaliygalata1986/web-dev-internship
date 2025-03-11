@@ -6,24 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('retailers', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('url');
-            $table->string('currency');
+            $table->string('title', 255);
+            $table->string('url', 255)->unique();
+            $table->string('currency', 10);
             $table->string('logo')->nullable();
+            $table->timestamps(); // Додаємо created_at і updated_at
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('retailers');
     }
