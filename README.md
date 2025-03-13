@@ -42,7 +42,7 @@ docker exec -it web-dev-internship_php-cli_1 composer install
 
 🔹 **4. Environment Configuration**
 
-🔹 **4.1. **Copy the example environment file**
+🔹 **4.1. Copy the example environment file**
 
  ```sh
 cp .env.examples .env
@@ -83,5 +83,5 @@ docker exec -it web-dev-internship_php-cli_1 php artisan key:generate
 
 🔹 **8. Access the Application**
 
-🔗 **Live Demo:** [http://localhost:8080](http://localhost:8080)  
-📊 **phpMyAdmin:** [http://localhost:8083](http://localhost:8083)  
+   **Live Demo:** [http://localhost:8080](http://localhost:8080)  
+   **phpMyAdmin:** [http://localhost:8083](http://localhost:8083)  
