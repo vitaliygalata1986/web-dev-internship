@@ -1,13 +1,11 @@
-#### Setup Instructions
-
-### Prerequisites
+# Setup Instructions
 
 ## This project requires:
 
 1. 🐳 Docker installed
 2. 🐳 Docker Compose installed
 
-# Installation and Launch
+### Installation and Launch
 
 🔹 1. Clone the Repository:
 
@@ -32,7 +30,7 @@ docker ps
 
 🔍 3.2 Find the PHP CLI container
 
-Look for a container named something like <stron>web-dev-internship_php-cli</strong>
+Look for a container named something like web-dev-internship_php-cli
 
 ⚙ 3.3.  Install dependencies inside the container
 
